@@ -36,8 +36,7 @@ CREATE TABLE sales (
 );
 -----------------------------------------------------------------------------------------------------
 4. Communication History Table
-sql
-Copy code
+
 CREATE TABLE communication_history (
     communication_id SERIAL PRIMARY KEY,
     customer_id INT REFERENCES customers(customer_id),
