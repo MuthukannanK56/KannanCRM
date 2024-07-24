@@ -1,8 +1,7 @@
 Database table structure
 =========================
 
-User Table
------------
+1.User Table
 
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
@@ -13,9 +12,8 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ----------------------------------------------------------------------------------------
-Customers Table
-sql
-Copy code
+2.Customers Table
+
 CREATE TABLE customers (
     customer_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -26,9 +24,8 @@ CREATE TABLE customers (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 --------------------------------------------------------------------------------------------
-Sales Table
-sql
-Copy code
+3.Sales Table
+
 CREATE TABLE sales (
     sale_id SERIAL PRIMARY KEY,
     customer_id INT REFERENCES customers(customer_id),
@@ -50,18 +47,8 @@ CREATE TABLE communication_history (
     notes TEXT
 );
 -----------------------------------------------------------------------------------------------------
-CREATE TABLE leads (
-    lead_id SERIAL PRIMARY KEY,
-    customer_id INT REFERENCES customers(customer_id),
-    status VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP
-);
-
--------------------------------------------------------------------------------------------------
 5. Leads Table
-sql
-Copy code
+
 CREATE TABLE leads (
     lead_id SERIAL PRIMARY KEY,
     customer_id INT REFERENCES customers(customer_id),
@@ -71,8 +58,7 @@ CREATE TABLE leads (
 );
 ------------------------------------------------------------------------------------------------
 6. Reports Table
-sql
-Copy code
+
 CREATE TABLE reports (
     report_id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(user_id),
