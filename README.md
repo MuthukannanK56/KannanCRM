@@ -151,3 +151,5 @@ Controller Layer: Create REST controllers to handle HTTP requests and map them t
 Security Configuration: Configure Spring Security for user authentication and authorization.
 
 By following this approach, you can build a robust CRM system using Spring Boot, Java, and PostgreSQL.
+
+
