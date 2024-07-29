@@ -11,32 +11,48 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private long id;
 
+    @Column(name = "username")
     private String username;
-    private String password;
-    private String email;
-    private  String role;
-    private Date created_at;
 
-    public User(Long id, String username, String password, String email, String role, Date created_at) {
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "role")
+
+    private String role;
+
+
+    @Column(name = "created_at")
+    private Date createdAt;
+
+    @Column(name="last_modified_at")
+    private Date lastModifiedAt;
+
+    public User(){
+
+    }
+
+    public User(long id, String username, String password, String email, String role, Date createdAt, Date lastModifiedAt) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
         this.role = role;
-        this.created_at = created_at;
+        this.createdAt = createdAt;
+        this.lastModifiedAt = lastModifiedAt;
     }
 
-    public User() {
-
-    }
-
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -72,11 +88,19 @@ public class User {
         this.role = role;
     }
 
-    public Date getCreated_at() {
-        return created_at;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Date created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getLastModifiedAt() {
+        return lastModifiedAt;
+    }
+
+    public void setLastModifiedAt(Date lastModifiedAt) {
+        this.lastModifiedAt = lastModifiedAt;
     }
 }
