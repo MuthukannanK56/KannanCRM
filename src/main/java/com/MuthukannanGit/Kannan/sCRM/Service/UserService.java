@@ -17,7 +17,6 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-
     Date now = new Date();
 
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {

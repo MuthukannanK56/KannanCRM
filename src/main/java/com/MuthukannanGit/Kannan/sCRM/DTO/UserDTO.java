@@ -1,57 +1,38 @@
-package com.MuthukannanGit.Kannan.sCRM.Model;
+package com.MuthukannanGit.Kannan.sCRM.DTO;
 
-import jakarta.persistence.*;
-import lombok.Data;
+import jakarta.persistence.PrePersist;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
-@Entity
-@Table(name="users")
-public class User {
+public class UserDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private long id;
-
-    @Column(name = "username")
+    private Long id;
     private String username;
 
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "email")
     private String email;
-
-    @Column(name = "role")
     private String role;
-
-
-    @Column(name = "created_at")
     private Date createdAt;
+    private Date LastModifiedAt;
 
-    @Column(name="last_modified_at")
-    private Date lastModifiedAt;
 
-    public User(){
-
-    }
-
-    public User(long id, String username, String password, String email, String role, Date createdAt, Date lastModifiedAt) {
+public UserDTO(){}
+    public UserDTO(Long id, String username, String password, String email, String role, Date createdAt, Date lastModifiedAt) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
         this.role = role;
         this.createdAt = createdAt;
-        this.lastModifiedAt = lastModifiedAt;
+        LastModifiedAt = lastModifiedAt;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -96,10 +77,11 @@ public class User {
     }
 
     public Date getLastModifiedAt() {
-        return lastModifiedAt;
+        return LastModifiedAt;
     }
 
     public void setLastModifiedAt(Date lastModifiedAt) {
-        this.lastModifiedAt = lastModifiedAt;
+        LastModifiedAt = lastModifiedAt;
     }
 }
+

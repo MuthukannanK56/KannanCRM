@@ -18,13 +18,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "Select * from users where role = :role", nativeQuery = true)
     List<User> findByRole(@Param("role") String role);
 
-
     @Query("SELECT new com.MuthukannanGit.Kannan.sCRM.DTO.GetCredentialDTO(u.id, u.username, u.password) FROM User u WHERE u.id = :id")
     public GetCredentialDTO findUsersById(@Param("id") long role);
 
     Optional<User> findByUsername(String username);
     Optional<User> findByEmail(String email);
-
-
-
 }

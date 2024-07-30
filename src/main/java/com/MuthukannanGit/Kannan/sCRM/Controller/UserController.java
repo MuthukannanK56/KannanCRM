@@ -31,7 +31,6 @@ public class UserController{
 //        return userService.getUserById(id);
 //    }
 
-
     @PostMapping("create")
     public ResponseEntity<UserDTO> createUser(@RequestBody CreateUserRequest request) {
         UserDTO userDTO = userService.createUser(request);

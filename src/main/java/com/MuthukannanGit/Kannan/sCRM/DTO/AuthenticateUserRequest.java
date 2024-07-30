@@ -1,27 +1,14 @@
 package com.MuthukannanGit.Kannan.sCRM.DTO;
 
-import lombok.Getter;
-import lombok.Setter;
+public class AuthenticateUserRequest {
 
-public class GetCredentialDTO {
-    private Long id;
     private String username;
-
     private String password;
 
-    public GetCredentialDTO(Long id, String username, String password) {
-        this.id = id;
+
+    public AuthenticateUserRequest(String username, String password) {
         this.username = username;
         this.password = password;
-    }
-    public GetCredentialDTO() {
-    }
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -39,4 +26,6 @@ public class GetCredentialDTO {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    // Getters and setters
 }
